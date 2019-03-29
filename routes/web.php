@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/login-with/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('/login-with/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');

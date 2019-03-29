@@ -18,7 +18,15 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email',
+        'password',
+        'first_name',
+        'last_name',
+        'country',
+        'dob',
+        'email',
+        'phone',
+        'password',
     ];
 
     /**
@@ -38,4 +46,24 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * User/Account relationship.
+     *
+     * @return
+     */
+    public function accounts()
+    {
+        return $this->hasMany(LinkedSocialAccount::class);
+    }
+
+    /**
+     * Full name accessor.
+     *
+     * @return string The full name of the user.
+     */
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

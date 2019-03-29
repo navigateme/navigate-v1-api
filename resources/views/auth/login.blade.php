@@ -64,6 +64,15 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 offset-md-4">
+                                Login with
+                                <a href="{{ url('/login-with/facebook') }}"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                                <a href="{{ url('/login-with/google') }}"><i class="fa fa-google-official" aria-hidden="true"></i> Google</a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
