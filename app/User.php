@@ -121,14 +121,10 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
     }
 
     /**
-     * Hash user's password
-     * @param string $password The user's password
+     * Get the full name for the authenticated user
+     *
+     * @return string The user's full name.
      */
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
-
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
