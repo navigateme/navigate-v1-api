@@ -5,7 +5,7 @@ return [
     /*
      * Custom logo url.
      */
-    'logo' => '/images/logo.png',
+    'logo' => 'https://res.cloudinary.com/ovac/image/upload/w_200,h_100,c_pad,bo_50px_solid_transparent/v1554041908/navigate_Logo_01_fczfk0.png',
 
     /*
      * Custom logo url.
