@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Settings\ChangePasswordRequest;
 use App\Http\Requests\Settings\UpdateProfileRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * @group Account Settings
@@ -69,7 +71,11 @@ class SettingController extends Controller
      */
     public function changePassword(ChangePasswordRequest $request)
     {
-        $this->user->update($request->only('password'));
+        $this->user->password = Hash::make($request->input('password'));
+
+        $this->user->setRememberToken(Str::random(60));
+
+        $this->user->save();
 
         return responder()->success()
 
