@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import AppRoot from 'navigate_front';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -13,4 +16,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
+if (document.getElementById('root')) {
+	ReactDOM.render(<AppRoot />, document.getElementById('root'));
+}
