@@ -21,7 +21,7 @@ trait AuthenticatesUsers
      * The user's registered email address or valid international phone number or username. Example: +233553577261. Example: user@gmail.com Example: ovac4u
      *
      * @bodyParam password string required
-     * The user's password. Example: qodehub123
+     * The user's password. Example: google123
      *
      * @responseFile responses/v1/auth.login.json
      */

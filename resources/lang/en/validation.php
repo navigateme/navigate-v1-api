@@ -131,6 +131,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'dob' => [
+            'date' => 'Invalid date provided. Please check and try again.',
+        ],
     ],
 
     'user_phone' => [

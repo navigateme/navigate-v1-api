@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'first_name' => 'required|alpha|min:3|max:32',
             'last_name' => 'required|min:3|max:32',
             'password' => 'required|min:6|confirmed',
+            'dob' => 'required|date',
         ] + $this->reusableRules());
     }
 
@@ -94,16 +95,20 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create(
-            array_only($data, [
-                'first_name',
-                'last_name',
-                'password',
-                'username',
-                'country',
-                'phone',
-                'email',
-                'dob',
-            ])
+            array_merge(
+                array('password' => bcrypt(
+                    $data['password']///
+                )), //////////////////
+                array_only($data, [
+                    'first_name',
+                    'last_name',
+                    'username',
+                    'country',
+                    'phone',
+                    'email',
+                    'dob',
+                ])
+            )
         );
     }
 

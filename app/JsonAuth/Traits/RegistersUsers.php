@@ -33,11 +33,14 @@ trait RegistersUsers
      * @bodyParam username string
      * A valid and unique aplha_dash string. Example: ovac4u
      *
+     * @bodyParam dob string
+     * A valid date string for the user's date of birth. Example: 01/10/2001
+     *
      * @bodyParam password string required
-     * The password to use for this account. Example: qodehub123
+     * The password to use for this account. Example: google123
      *
      * @bodyParam password_confirmation string required
-     * The password confirmation. Example: qodehub123
+     * The password confirmation. Example: google123
      *
      * @bodyParam verify_phone boolean
      * When set to true, a verification code will be sent to the phone after the account is created. Example: true

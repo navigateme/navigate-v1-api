@@ -29,7 +29,7 @@ class SettingController extends Controller
      * Updates the user's other names. Example: Ibhrahim
      *
      * @bodyParam email string
-     * Updates the user's email address (must be unique). Example: victorariama@qodehub.com
+     * Updates the user's email address (must be unique). Example: iamovac@gmail.com
      *
      * @bodyParam username string
      * Updates the user's username (must be unique). Example: ovac

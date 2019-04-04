@@ -20,10 +20,10 @@ trait ResetsPasswords
      * The secret token that was sent to the user's email. Example: 32c224ec96b1aca6d3e3b2985b72e93ca019497467256c8b7c76131ece7467fc
      *
      * @bodyParam password string required
-     * The password to use for this account. Example: qodehub456
+     * The password to use for this account. Example: google123
      *
      * @bodyParam password_confirmation string required
-     * The password confirmation. Example: qodehub456
+     * The password confirmation. Example: google123
      *
      * @responseFile responses/v1/auth.password.reset.json
      *

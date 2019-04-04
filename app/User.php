@@ -6,6 +6,7 @@ use App\Implementation\InternationalizePhone;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Passport\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -49,6 +50,11 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setDobAttribute($date)
+    {
+        return Carbon::parse($date);
+    }
 
     /**
      * User/Account relationship.
